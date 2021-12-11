@@ -24,7 +24,7 @@ Touch [Firmware file](firmware_00.fw) for for Linux Device
 
  ## Instruction
  create a Folder
- ’sudo mkdir /lib/firmware/silead’
+ `sudo mkdir /lib/firmware/silead`
   
   copy and rename file
   ’sudo cp firmware_00.fw /lib/firmware/silead/mssl1680.fw’
