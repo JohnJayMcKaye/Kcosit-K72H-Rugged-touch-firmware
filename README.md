@@ -12,7 +12,7 @@ Touch [Firmware file](firmware_00.fw) for for Linux Device
 | Website                   | hhttps://www.kcosit.com/Rugged-Handheld-PDA-Win10-1D2D-Barcode-Scanner-4GB-RAM-64GB-ROM-p1563970.html |
 | Vendor driver (Windows)   | [SileadTouch.sys](SileadTouch.sys) |
 | Extracted firmware        | [firmware_00.fw](firmware_00.fw) |
-| Firmware for gslx680-acpi | [silead_ts.fw](silead_ts.fw) |
+| Firmware for gslx680-acpi | [SileadTouch.sys](SileadTouch.sys) |
 | Display resolution        | 1280X720 |
 | Touch panel resolution    | unknown |
 | Touch controller          | GSLxxxx, you should open your device and verify this |
@@ -27,7 +27,7 @@ Touch [Firmware file](firmware_00.fw) for for Linux Device
  
  `sudo mkdir /lib/firmware/silead`
   
-  copy and rename file
+  copy and rename [Firmware file](firmware_00.fw)
  
   `sudo cp firmware_00.fw /lib/firmware/silead/mssl1680.fw`
   
@@ -62,4 +62,6 @@ edit 99-calibration.conf
       Option "SwapAxes" "1"
 EndSection`
 
+ reboot
+ 
  this currently only works under X11 no Wayland support
