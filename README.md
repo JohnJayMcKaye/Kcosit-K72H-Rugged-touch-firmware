@@ -27,25 +27,25 @@ Touch [Firmware file](firmware_00.fw) for for Linux Device
  `sudo mkdir /lib/firmware/silead`
   
   copy and rename file
-  ’sudo cp firmware_00.fw /lib/firmware/silead/mssl1680.fw’
+  `sudo cp firmware_00.fw /lib/firmware/silead/mssl1680.fw`
   
   make sure insalled these
-  ’sudo apt-get install xserver-xorg-input-evdev xserver-xorg-core’
+  `sudo apt-get install xserver-xorg-input-evdev xserver-xorg-core`
   
   edit this part of 10-evdev.conf file
-  ’sudo nano /usr/share/X11/xorg.conf.d/10-evdev.conf’ 
-  ’Section "InputClass"
+  `sudo nano /usr/share/X11/xorg.conf.d/10-evdev.conf` 
+  `Section "InputClass"
         Identifier "evdev touchscreen catchall"
         MatchIsTouchscreen "on"
         MatchDevicePath "/dev/input/event*"
         Driver "evdev"
         Option "SwapXY" "0"
-EndSection’
+EndSection`
   
 edit 99-calibration.conf
-’sudo nano /usr/share/X11/xorg.conf.d/99-calibration.conf’
+`sudo nano /usr/share/X11/xorg.conf.d/99-calibration.conf`
 
-’Section "InputClass"
+`Section "InputClass"
       Identifier "evdev touchscreen catchall"
       MatchIsTouchscreen "on"
       MatchDevicePath "/dev/input/event*"
@@ -54,6 +54,6 @@ edit 99-calibration.conf
       Option "InvertY" "1"
       Option "Calibration" "15 875 15 1650"
       Option "SwapAxes" "1"
-EndSection’
+EndSection`
 
  this currently only works under X11 no Wayland support
